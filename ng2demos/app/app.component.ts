@@ -4,6 +4,7 @@ import {RouteConfig, ROUTER_PROVIDERS, ROUTER_DIRECTIVES} from 'angular2/router'
 import {Home} from './components/home/home.component'
 import {Basic} from './components/basic/basic.component';
 import {Newsletters} from './components/newsletters/newsletters.component';
+import {SearchGrid} from './components/searchgrid/searchgrid';
 
 @Component({
     selector: 'my-app',
@@ -24,6 +25,7 @@ import {Newsletters} from './components/newsletters/newsletters.component';
                     <li class="active"><a [routerLink]="['Home']">Home</a></li>
                     <li><a [routerLink]="['Basic']">Basic</a></li>
                     <li><a [routerLink]="['Newsletters']">Newsletters</a></li>
+                    <li><a [routerLink]="['SearchGrid']">SearchGrid</a></li>
                 </ul>
                 </div>
             </div>
@@ -41,7 +43,9 @@ import {Newsletters} from './components/newsletters/newsletters.component';
 @RouteConfig([
   { path:'/',            name: 'Home',       component: Home },
   { path:'/basic',     name: 'Basic',    component: Basic },
-  { path:'/newsletters',     name: 'Newsletters',    component: Newsletters }
+  { path:'/newsletters',     name: 'Newsletters',    component: Newsletters },
+  { path:'/searchgrid',     name: 'SearchGrid',    component: SearchGrid }
+
 ])
 
 export class AppComponent { }

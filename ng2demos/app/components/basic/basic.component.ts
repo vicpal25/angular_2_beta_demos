@@ -6,12 +6,13 @@ import {Hello} from './hello.component';
     templateUrl: './app/templates/basic.component.html'
 })
 
+
+// interface Purchaser {id: int; bankAccount: Account;}
+
 export class Basic {
 
   constructor(){
-
     console.log(this);
-
   }
 
   sayHello() {
@@ -19,19 +20,6 @@ export class Basic {
   }
 
   computedProperties() {
-
-    type NeighborMap = { [name: string]: Node };
-    type Node = { name: string; neighbors: NeighborMap;}
-
-    function makeNode(name: string, initialNeighbor: Node): Node {
-        return {
-            name: name,
-            neighbors: {
-                [initialNeighbor.name]: initialNeighbor
-            }
-        }
-    }
-
 
   }
 
