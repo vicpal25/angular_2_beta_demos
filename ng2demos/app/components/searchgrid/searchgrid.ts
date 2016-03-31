@@ -9,13 +9,29 @@ import {Sortable} from './sortable';
     selector: 'grid',
     properties: ['rows: rows','columns: columns'],
     templateUrl: './app/templates/searchgrid.component.html'
-
 })
 
 export class SearchGrid {
 
     columns:Array<Column>;
     rows:Array<any>;
+
+    constructor() {
+      
+         this.columns = [
+             new Column('newsletter','First Name'),
+             new Column('newsletter','Last Name'),
+             new Column('age','Age')
+         ];
+
+         this.rows = [
+           {newsletter:'Joe',lastName:'Jackson',age:20},
+           {newsletter:'Peter',lastName:'Smith',age:30},
+           {newsletter:'Jane',lastName:'Doe',age:50},
+           {newsletter:'Tim',lastName:'Smith',age:80}
+         ]
+
+    }
 
     sorter = new Sortable();
 

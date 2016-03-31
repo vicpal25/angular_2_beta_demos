@@ -1,5 +1,7 @@
-import {Component} from 'angular2/core'
+import {Component} from 'angular2/core';
 import {RouteConfig, ROUTER_PROVIDERS, ROUTER_DIRECTIVES} from 'angular2/router'
+
+//import {ROUTER_DIRECTIVES, ROUTER_PROVIDERS, RouteConfig} from 'angular2/router';
 
 import {Home} from './components/home/home.component'
 import {Basic} from './components/basic/basic.component';
@@ -45,7 +47,6 @@ import {SearchGrid} from './components/searchgrid/searchgrid';
   { path:'/basic',     name: 'Basic',    component: Basic },
   { path:'/newsletters',     name: 'Newsletters',    component: Newsletters },
   { path:'/searchgrid',     name: 'SearchGrid',    component: SearchGrid }
-
 ])
 
 export class AppComponent { }

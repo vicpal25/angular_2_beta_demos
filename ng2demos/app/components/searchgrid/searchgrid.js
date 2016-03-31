@@ -1,4 +1,4 @@
-System.register(['angular2/core', './sortable'], function(exports_1, context_1) {
+System.register(['angular2/core', './column', './sortable'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,12 +10,15 @@ System.register(['angular2/core', './sortable'], function(exports_1, context_1) 
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, sortable_1;
+    var core_1, column_1, sortable_1;
     var SearchGrid;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
+            },
+            function (column_1_1) {
+                column_1 = column_1_1;
             },
             function (sortable_1_1) {
                 sortable_1 = sortable_1_1;
@@ -24,6 +27,17 @@ System.register(['angular2/core', './sortable'], function(exports_1, context_1) 
             SearchGrid = (function () {
                 function SearchGrid() {
                     this.sorter = new sortable_1.Sortable();
+                    this.columns = [
+                        new column_1.Column('newsletter', 'First Name'),
+                        new column_1.Column('newsletter', 'Last Name'),
+                        new column_1.Column('age', 'Age')
+                    ];
+                    this.rows = [
+                        { newsletter: 'Joe', lastName: 'Jackson', age: 20 },
+                        { newsletter: 'Peter', lastName: 'Smith', age: 30 },
+                        { newsletter: 'Jane', lastName: 'Doe', age: 50 },
+                        { newsletter: 'Tim', lastName: 'Smith', age: 80 }
+                    ];
                 }
                 SearchGrid.prototype.sort = function (key) {
                     this.sorter.sort(key, this.rows);
