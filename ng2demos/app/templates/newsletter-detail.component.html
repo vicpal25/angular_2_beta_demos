@@ -1,0 +1,10 @@
+<div *ngIf="newsletter">
+  <h2>{{newsletter.name}} details!</h2>
+  <div>
+    <label>id: </label>{{newsletter.id}}</div>
+  <div>
+    <label>name: </label>
+    <input [(ngModel)]="newsletter.name" placeholder="name" />
+  </div>
+  <button (click)="goBack()">Back</button>
+</div>
