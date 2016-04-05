@@ -7,6 +7,10 @@ import {Home} from './components/home/home.component'
 import {Basic} from './components/basic/basic.component';
 import {Newsletters} from './components/newsletters/newsletters.component';
 import {SearchGrid} from './components/searchgrid/searchgrid';
+import { DashboardComponent } from './components/heroes/dashboard.component';
+import { HeroesComponent } from './components/heroes/heroes.component';
+import { HeroDetailComponent } from './components/heroes/hero-detail.component';
+import { HeroService } from './components/heroes/hero.service';
 
 @Component({
     selector: 'my-app',
@@ -28,6 +32,8 @@ import {SearchGrid} from './components/searchgrid/searchgrid';
                     <li><a [routerLink]="['Basic']">Basic</a></li>
                     <li><a [routerLink]="['Newsletters']">Newsletters</a></li>
                     <li><a [routerLink]="['SearchGrid']">SearchGrid</a></li>
+                    <li><a [routerLink]="['Dashboard']">Dashboard</a></li>
+                    <li><a [routerLink]="['Heroes']">Heroes</a></li>
                 </ul>
                 </div>
             </div>
@@ -39,14 +45,30 @@ import {SearchGrid} from './components/searchgrid/searchgrid';
         </div>
     `,
     directives: [ROUTER_DIRECTIVES],
-    providers: [ROUTER_PROVIDERS]
+    providers: [ROUTER_PROVIDERS, HeroService]
 })
 
 @RouteConfig([
   { path:'/',            name: 'Home',       component: Home },
   { path:'/basic',     name: 'Basic',    component: Basic },
   { path:'/newsletters',     name: 'Newsletters',    component: Newsletters },
-  { path:'/searchgrid',     name: 'SearchGrid',    component: SearchGrid }
+  { path:'/searchgrid',     name: 'SearchGrid',    component: SearchGrid },
+  {
+    path: '/dashboard',
+    name: 'Dashboard',
+    component: DashboardComponent,
+    useAsDefault: true
+  },
+  {
+    path: '/detail/:id',
+    name: 'HeroDetail',
+    component: HeroDetailComponent
+  },
+  {
+    path: '/heroes',
+    name: 'Heroes',
+    component: HeroesComponent
+  }
 ])
 
 export class AppComponent { }

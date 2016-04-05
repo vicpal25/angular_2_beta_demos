@@ -1,4 +1,5 @@
 import {bootstrap}    from 'angular2/platform/browser'
 import {AppComponent} from './app.component'
+import {NewsletterService} from './components/searchgrid/newsletters';
 
-bootstrap(AppComponent);
+bootstrap(AppComponent, [NewsletterService]);
