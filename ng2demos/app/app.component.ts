@@ -12,9 +12,13 @@ import { HeroesComponent } from './components/heroes/heroes.component';
 import { HeroDetailComponent } from './components/heroes/hero-detail.component';
 import { HeroService } from './components/heroes/hero.service';
 
+import { CampaignComponent } from './components/masterdetail/campaign.component';
+import { NewsletterDetailComponent } from './components/masterdetail/newsletter-detail.component';
+import { NewsletterService } from './components/masterdetail/newsletter.service';
+
 @Component({
-    selector: 'my-app',
-    template: `
+  selector: 'my-app',
+  template: `
          <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
@@ -34,6 +38,7 @@ import { HeroService } from './components/heroes/hero.service';
                     <li><a [routerLink]="['SearchGrid']">SearchGrid</a></li>
                     <li><a [routerLink]="['Dashboard']">Dashboard</a></li>
                     <li><a [routerLink]="['Heroes']">Heroes</a></li>
+                    <li><a [routerLink]="['Campaign']">Campaign</a></li>
                 </ul>
                 </div>
             </div>
@@ -44,31 +49,22 @@ import { HeroService } from './components/heroes/hero.service';
             </div>
         </div>
     `,
-    directives: [ROUTER_DIRECTIVES],
-    providers: [ROUTER_PROVIDERS, HeroService]
+  directives: [ROUTER_DIRECTIVES],
+  providers: [ROUTER_PROVIDERS, HeroService, NewsletterService]
 })
 
 @RouteConfig([
-  { path:'/',            name: 'Home',       component: Home },
-  { path:'/basic',     name: 'Basic',    component: Basic },
-  { path:'/newsletters',     name: 'Newsletters',    component: Newsletters },
-  { path:'/searchgrid',     name: 'SearchGrid',    component: SearchGrid },
-  {
-    path: '/dashboard',
-    name: 'Dashboard',
-    component: DashboardComponent,
-    useAsDefault: true
-  },
-  {
-    path: '/detail/:id',
-    name: 'HeroDetail',
-    component: HeroDetailComponent
-  },
-  {
-    path: '/heroes',
-    name: 'Heroes',
-    component: HeroesComponent
-  }
+  { path: '/', name: 'Home', component: Home },
+  { path: '/basic', name: 'Basic', component: Basic },
+  { path: '/newsletters', name: 'Newsletters', component: Newsletters },
+  { path: '/searchgrid', name: 'SearchGrid', component: SearchGrid },
+  { path: '/dashboard', name: 'Dashboard', component: DashboardComponent, useAsDefault: true },
+  { path: '/detail/:id', name: 'HeroDetail', component: HeroDetailComponent },
+  { path: '/heroes', name: 'Heroes', component: HeroesComponent },
+  { path: '/newsletters/:id', name: 'NewslettersDetail', component: NewsletterDetailComponent },
+  { path: '/campaign', name: 'Campaign', component: CampaignComponent }
+
+
 ])
 
 export class AppComponent { }
