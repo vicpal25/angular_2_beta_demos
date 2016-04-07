@@ -35,7 +35,7 @@ System.register(['angular2/core', './mock-campaigns'], function(exports_1, conte
                     );
                 };
                 NewsletterService.prototype.getNewsletter = function (id) {
-                    return Promise.resolve(mock_campaigns_1.CAMPAIGNS).then(function (newsletters) { return newsletters.filter(function (Newsletter) { return newsletter.id === id; })[0]; });
+                    return Promise.resolve(mock_campaigns_1.CAMPAIGNS).then(function (newsletters) { return newsletters.filter(function (newsletter) { return newsletter.id === id; })[0]; });
                 };
                 NewsletterService = __decorate([
                     core_1.Injectable(), 

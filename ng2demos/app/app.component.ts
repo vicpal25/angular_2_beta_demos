@@ -36,8 +36,6 @@ import { NewsletterService } from './components/masterdetail/newsletter.service'
                     <li><a [routerLink]="['Basic']">Basic</a></li>
                     <li><a [routerLink]="['Newsletters']">Newsletters</a></li>
                     <li><a [routerLink]="['SearchGrid']">SearchGrid</a></li>
-                    <li><a [routerLink]="['Dashboard']">Dashboard</a></li>
-                    <li><a [routerLink]="['Heroes']">Heroes</a></li>
                     <li><a [routerLink]="['Campaign']">Campaign</a></li>
                 </ul>
                 </div>

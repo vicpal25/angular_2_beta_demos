@@ -6,9 +6,9 @@ import { NewsletterDetailComponent } from './newsletter-detail.component';
 import { NewsletterService } from './newsletter.service';
 
 @Component({
-  selector: 'my-heroes',
-  templateUrl: './app/templates/newsletters.component.html',
-  styleUrls:  ['./app/templates/heroes.component.css'],
+  selector: 'newsletters',
+  templateUrl: './app/templates/campaign.component.html',
+  styleUrls:  ['./app/templates/campaign.component.css'],
   directives: [NewsletterDetailComponent]
 })
 export class CampaignComponent implements OnInit {
@@ -19,17 +19,17 @@ export class CampaignComponent implements OnInit {
     private _router: Router,
     private _newsletterService: NewsletterService) { }
 
-  getHeroes() {
+  getNewsletters() {
     this._newsletterService.getNewsletters().then(newsletters => this.newsletters = newsletters);
   }
 
   ngOnInit() {
-    this.getHeroes();
+    this.getNewsletters();
   }
 
   onSelect(newsletter: Newsletter) { this.selectedNewsletter = newsletter; }
 
   gotoDetail() {
-    this._router.navigate(['NewsletterDetailComponent', { id: this.selectedNewsletter.id }]);
+    this._router.navigate(['NewslettersDetail', { id: this.selectedNewsletter.id }]);
   }
 }

@@ -32,22 +32,22 @@ System.register(['angular2/core', 'angular2/router', './newsletter-detail.compon
                     this._router = _router;
                     this._newsletterService = _newsletterService;
                 }
-                CampaignComponent.prototype.getHeroes = function () {
+                CampaignComponent.prototype.getNewsletters = function () {
                     var _this = this;
                     this._newsletterService.getNewsletters().then(function (newsletters) { return _this.newsletters = newsletters; });
                 };
                 CampaignComponent.prototype.ngOnInit = function () {
-                    this.getHeroes();
+                    this.getNewsletters();
                 };
                 CampaignComponent.prototype.onSelect = function (newsletter) { this.selectedNewsletter = newsletter; };
                 CampaignComponent.prototype.gotoDetail = function () {
-                    this._router.navigate(['NewsletterDetailComponent', { id: this.selectedNewsletter.id }]);
+                    this._router.navigate(['NewslettersDetail', { id: this.selectedNewsletter.id }]);
                 };
                 CampaignComponent = __decorate([
                     core_1.Component({
-                        selector: 'my-heroes',
-                        templateUrl: './app/templates/newsletters.component.html',
-                        styleUrls: ['./app/templates/heroes.component.css'],
+                        selector: 'newsletters',
+                        templateUrl: './app/templates/campaign.component.html',
+                        styleUrls: ['./app/templates/campaign.component.css'],
                         directives: [newsletter_detail_component_1.NewsletterDetailComponent]
                     }), 
                     __metadata('design:paramtypes', [router_1.Router, newsletter_service_1.NewsletterService])

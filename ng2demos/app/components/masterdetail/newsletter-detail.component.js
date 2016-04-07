@@ -47,7 +47,7 @@ System.register(['angular2/core', 'angular2/router', './newsletter', './newslett
                 ], NewsletterDetailComponent.prototype, "newsletter", void 0);
                 NewsletterDetailComponent = __decorate([
                     core_1.Component({
-                        selector: 'newsletter-detail',
+                        selector: 'my-hero-detail',
                         templateUrl: './app/templates/newsletter-detail.component.html',
                         styleUrls: ['./app/templates/hero-detail.component.css']
                     }), 

@@ -17,7 +17,7 @@ export class NewsletterService {
 
   getNewsletter(id: number) {
     return Promise.resolve(CAMPAIGNS).then(
-      newsletters => newsletters.filter(Newsletter => newsletter.id === id)[0]
+      newsletters => newsletters.filter(newsletter => newsletter.id === id)[0]
     );
   }
 }

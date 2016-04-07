@@ -1,0 +1,14 @@
+<div>
+  <h2>Available Newsletters</h2>
+  <ul class="newsletters">
+    <li *ngFor="#newsletter of newsletters"
+      [class.selected]="newsletter === selectedNewsletter"
+      (click)="onSelect(newsletter)">
+      <span class="badge">{{newsletter.id}}</span> {{newsletter.name}}
+    </li>
+  </ul>
+  <div *ngIf="selectedNewsletter">
+    <h2>{{selectedNewsletter.name | uppercase}} is my Newsletter</h2>
+    <button (click)="gotoDetail()">View Details</button>
+  </div>
+</div>

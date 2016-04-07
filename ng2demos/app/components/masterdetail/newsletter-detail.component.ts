@@ -5,11 +5,12 @@ import { Newsletter } from './newsletter';
 import { NewsletterService } from './newsletter.service';
 
 @Component({
-  selector: 'newsletter-detail',
+  selector: 'my-hero-detail',
   templateUrl: './app/templates/newsletter-detail.component.html',
   styleUrls: ['./app/templates/hero-detail.component.css']
 })
 export class NewsletterDetailComponent implements OnInit {
+
   @Input() newsletter: Newsletter;
 
   constructor(
@@ -18,9 +19,14 @@ export class NewsletterDetailComponent implements OnInit {
   }
 
   ngOnInit() {
+
     let id = +this._routeParams.get('id');
+
+
+
     this._newsletterService.getNewsletter(id)
       .then(newsletter => this.newsletter = newsletter);
+
   }
 
   goBack() {
