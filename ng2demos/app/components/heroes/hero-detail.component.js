@@ -27,34 +27,32 @@ System.register(['angular2/core', 'angular2/router', './hero', './hero.service']
                 hero_service_1 = hero_service_1_1;
             }],
         execute: function() {
-            HeroDetailComponent = (function () {
-                function HeroDetailComponent(_heroService, _routeParams) {
+            let HeroDetailComponent = class HeroDetailComponent {
+                constructor(_heroService, _routeParams) {
                     this._heroService = _heroService;
                     this._routeParams = _routeParams;
                 }
-                HeroDetailComponent.prototype.ngOnInit = function () {
-                    var _this = this;
-                    var id = +this._routeParams.get('id');
+                ngOnInit() {
+                    let id = +this._routeParams.get('id');
                     this._heroService.getHero(id)
-                        .then(function (hero) { return _this.hero = hero; });
-                };
-                HeroDetailComponent.prototype.goBack = function () {
+                        .then(hero => this.hero = hero);
+                }
+                goBack() {
                     window.history.back();
-                };
-                __decorate([
-                    core_1.Input(), 
-                    __metadata('design:type', hero_1.Hero)
-                ], HeroDetailComponent.prototype, "hero", void 0);
-                HeroDetailComponent = __decorate([
-                    core_1.Component({
-                        selector: 'my-hero-detail',
-                        templateUrl: './app/templates/hero-detail.component.html',
-                        styleUrls: ['./app/templates/hero-detail.component.css']
-                    }), 
-                    __metadata('design:paramtypes', [hero_service_1.HeroService, router_1.RouteParams])
-                ], HeroDetailComponent);
-                return HeroDetailComponent;
-            }());
+                }
+            };
+            __decorate([
+                core_1.Input(), 
+                __metadata('design:type', hero_1.Hero)
+            ], HeroDetailComponent.prototype, "hero", void 0);
+            HeroDetailComponent = __decorate([
+                core_1.Component({
+                    selector: 'my-hero-detail',
+                    templateUrl: './app/templates/hero-detail.component.html',
+                    styleUrls: ['./app/templates/hero-detail.component.css']
+                }), 
+                __metadata('design:paramtypes', [hero_service_1.HeroService, router_1.RouteParams])
+            ], HeroDetailComponent);
             exports_1("HeroDetailComponent", HeroDetailComponent);
         }
     }

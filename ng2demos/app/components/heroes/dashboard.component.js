@@ -24,31 +24,29 @@ System.register(['angular2/core', 'angular2/router', './hero.service'], function
                 hero_service_1 = hero_service_1_1;
             }],
         execute: function() {
-            DashboardComponent = (function () {
-                function DashboardComponent(_router, _heroService) {
+            let DashboardComponent = class DashboardComponent {
+                constructor(_router, _heroService) {
                     this._router = _router;
                     this._heroService = _heroService;
                     this.heroes = [];
                 }
-                DashboardComponent.prototype.ngOnInit = function () {
-                    var _this = this;
+                ngOnInit() {
                     this._heroService.getHeroes()
-                        .then(function (heroes) { return _this.heroes = heroes.slice(1, 5); });
-                };
-                DashboardComponent.prototype.gotoDetail = function (hero) {
-                    var link = ['HeroDetail', { id: hero.id }];
+                        .then(heroes => this.heroes = heroes.slice(1, 5));
+                }
+                gotoDetail(hero) {
+                    let link = ['HeroDetail', { id: hero.id }];
                     this._router.navigate(link);
-                };
-                DashboardComponent = __decorate([
-                    core_1.Component({
-                        selector: 'my-dashboard',
-                        templateUrl: './app/templates/dashboard.component.html',
-                        styleUrls: ['./app/templates/dashboard.component.css']
-                    }), 
-                    __metadata('design:paramtypes', [router_1.Router, hero_service_1.HeroService])
-                ], DashboardComponent);
-                return DashboardComponent;
-            }());
+                }
+            };
+            DashboardComponent = __decorate([
+                core_1.Component({
+                    selector: 'my-dashboard',
+                    templateUrl: './app/templates/dashboard.component.html',
+                    styleUrls: ['./app/templates/dashboard.component.css']
+                }), 
+                __metadata('design:paramtypes', [router_1.Router, hero_service_1.HeroService])
+            ], DashboardComponent);
             exports_1("DashboardComponent", DashboardComponent);
         }
     }

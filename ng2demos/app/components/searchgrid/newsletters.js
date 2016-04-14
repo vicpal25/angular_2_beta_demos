@@ -18,8 +18,8 @@ System.register(["angular2/core"], function(exports_1, context_1) {
                 core_1 = core_1_1;
             }],
         execute: function() {
-            NewsletterService = (function () {
-                function NewsletterService() {
+            let NewsletterService = class NewsletterService {
+                constructor() {
                     this.newsletters = [
                         { newsletter: 'South Sentinel Midday Report', status: 'Production', newsleterid: 2089098223 },
                         { newsletter: 'Los Angeles Times Breaking News', status: 'Test', newsleterid: 2089098022 },
@@ -27,12 +27,11 @@ System.register(["angular2/core"], function(exports_1, context_1) {
                         { newsletter: 'South Florida Travel Unraveled', status: 'Test', newsleterid: 2089098061 }
                     ];
                 }
-                NewsletterService = __decorate([
-                    core_1.Injectable(), 
-                    __metadata('design:paramtypes', [])
-                ], NewsletterService);
-                return NewsletterService;
-            }());
+            };
+            NewsletterService = __decorate([
+                core_1.Injectable(), 
+                __metadata('design:paramtypes', [])
+            ], NewsletterService);
             exports_1("NewsletterService", NewsletterService);
         }
     }

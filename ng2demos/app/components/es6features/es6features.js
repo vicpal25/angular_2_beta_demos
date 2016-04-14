@@ -18,18 +18,15 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                 core_1 = core_1_1;
             }],
         execute: function() {
-            Es6features = (function () {
-                function Es6features() {
-                }
-                Es6features = __decorate([
-                    core_1.Component({
-                        selector: 'es6features',
-                        templateUrl: './app/templates/basic.component.html'
-                    }), 
-                    __metadata('design:paramtypes', [])
-                ], Es6features);
-                return Es6features;
-            }());
+            let Es6features = class Es6features {
+            };
+            Es6features = __decorate([
+                core_1.Component({
+                    selector: 'es6features',
+                    templateUrl: './app/templates/basic.component.html'
+                }), 
+                __metadata('design:paramtypes', [])
+            ], Es6features);
             exports_1("Es6features", Es6features);
         }
     }

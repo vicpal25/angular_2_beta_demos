@@ -1,5 +1,4 @@
 import { Injectable } from 'angular2/core';
-
 import { Newsletter } from './newsletter';
 import { CAMPAIGNS } from './mock-campaigns';
 

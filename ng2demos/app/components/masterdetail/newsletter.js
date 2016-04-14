@@ -5,11 +5,8 @@ System.register([], function(exports_1, context_1) {
     return {
         setters:[],
         execute: function() {
-            Newsletter = (function () {
-                function Newsletter() {
-                }
-                return Newsletter;
-            }());
+            class Newsletter {
+            }
             exports_1("Newsletter", Newsletter);
         }
     }

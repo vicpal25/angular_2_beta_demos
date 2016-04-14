@@ -19,5 +19,6 @@ export class Hello {
   set name(name){
     this._name = name;
   }
+  
 
 }

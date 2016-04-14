@@ -19,14 +19,9 @@ export class NewsletterDetailComponent implements OnInit {
   }
 
   ngOnInit() {
-
     let id = +this._routeParams.get('id');
-
-
-
     this._newsletterService.getNewsletter(id)
       .then(newsletter => this.newsletter = newsletter);
-
   }
 
   goBack() {

@@ -20,26 +20,25 @@ System.register(['angular2/core'], function(exports_1, context_1) {
         execute: function() {
             //NOTES: @Component is an annotation >  So it seems that @Component adds some
             //NOTES: metadata to the class in order to give it a specific meaning.
-            Basic = (function () {
-                function Basic() {
+            let Basic = class Basic {
+                constructor() {
                     console.log(this);
                 }
-                Basic.prototype.sayHello = function () {
+                sayHello() {
                     console.log("Greetings!");
-                };
-                Basic.prototype.computedProperties = function () {
-                };
-                Basic = __decorate([
-                    core_1.Component({
-                        //NOTES: Uses Web Components to render template as the selector
-                        selector: 'basic',
-                        //NOTES: Template URL which references logic
-                        templateUrl: './app/templates/basic.component.html'
-                    }), 
-                    __metadata('design:paramtypes', [])
-                ], Basic);
-                return Basic;
-            }());
+                }
+                computedProperties() {
+                }
+            };
+            Basic = __decorate([
+                core_1.Component({
+                    //NOTES: Uses Web Components to render template as the selector
+                    selector: 'basic',
+                    //NOTES: Template URL which references logic
+                    templateUrl: './app/templates/basic.component.html'
+                }), 
+                __metadata('design:paramtypes', [])
+            ], Basic);
             exports_1("Basic", Basic);
         }
     }

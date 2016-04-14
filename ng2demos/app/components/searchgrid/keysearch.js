@@ -21,12 +21,12 @@ System.register(['angular2/core', './newsletters'], function(exports_1, context_
                 newsletters_1 = newsletters_1_1;
             }],
         execute: function() {
-            KeySearch = (function () {
-                function KeySearch(newsletterService) {
+            let KeySearch = class KeySearch {
+                constructor(newsletterService) {
                     this.newsletterService = newsletterService;
                     this.cache = this.newsletterService.newsletters;
                 }
-                KeySearch.prototype.filterByID = function (obj) {
+                filterByID(obj) {
                     var invalidEntries;
                     if ('id' in obj && typeof (obj.id) === 'number' && !isNaN(obj.id)) {
                         return true;
@@ -35,8 +35,8 @@ System.register(['angular2/core', './newsletters'], function(exports_1, context_
                         invalidEntries++;
                         return false;
                     }
-                };
-                KeySearch.prototype.onKey = function (value) {
+                }
+                onKey(value) {
                     var enteredValue = value.srcElement.value;
                     var index = 0;
                     // this.newsletterService.newsletters.splice(0,1);
@@ -60,16 +60,15 @@ System.register(['angular2/core', './newsletters'], function(exports_1, context_
                     //  ), 0);
                     // this.newsletterService.newsletters.filter(this.filterByID);
                     //  console.log(this.newsletterService.newsletters);
-                };
-                KeySearch = __decorate([
-                    core_1.Component({
-                        selector: 'keysearch',
-                        templateUrl: './app/templates/keysearch.component.html'
-                    }), 
-                    __metadata('design:paramtypes', [newsletters_1.NewsletterService])
-                ], KeySearch);
-                return KeySearch;
-            }());
+                }
+            };
+            KeySearch = __decorate([
+                core_1.Component({
+                    selector: 'keysearch',
+                    templateUrl: './app/templates/keysearch.component.html'
+                }), 
+                __metadata('design:paramtypes', [newsletters_1.NewsletterService])
+            ], KeySearch);
             exports_1("KeySearch", KeySearch);
         }
     }

@@ -1,1 +1,1 @@
-{"version":3,"file":"es6features.js","sourceRoot":"","sources":["es6features.ts"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;YAOA;gBAAA;gBAcA,CAAC;gBAnBD;oBAAC,gBAAS,CAAC;wBACP,QAAQ,EAAE,aAAa;wBACvB,WAAW,EAAE,sCAAsC;qBACtD,CAAC;;+BAAA;gBAgBF,kBAAC;YAAD,CAAC,AAdD,IAcC;YAdD,qCAcC,CAAA"}
+{"version":3,"file":"es6features.js","sourceRoot":"","sources":["es6features.ts"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;YAOA;YAcA,CAAC;YAnBD;gBAAC,gBAAS,CAAC;oBACP,QAAQ,EAAE,aAAa;oBACvB,WAAW,EAAE,sCAAsC;iBACtD,CAAC;;2BAAA;YAEF,qCAcC,CAAA"}

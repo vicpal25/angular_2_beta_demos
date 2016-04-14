@@ -18,18 +18,18 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                 core_1 = core_1_1;
             }],
         execute: function() {
-            Home = (function () {
-                function Home() {
+            let Home = class Home {
+                constructor() {
+                    console.log("yo!");
                 }
-                Home = __decorate([
-                    core_1.Component({
-                        selector: 'home',
-                        template: '<h1>Home pageeee</h1>'
-                    }), 
-                    __metadata('design:paramtypes', [])
-                ], Home);
-                return Home;
-            }());
+            };
+            Home = __decorate([
+                core_1.Component({
+                    selector: 'home',
+                    template: '<h1>Home pageeee</h1><br/><input #name (keyup)="0" /> {{name.value}}'
+                }), 
+                __metadata('design:paramtypes', [])
+            ], Home);
             exports_1("Home", Home);
         }
     }

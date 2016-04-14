@@ -21,28 +21,23 @@ System.register(['angular2/core', './mock-campaigns'], function(exports_1, conte
                 mock_campaigns_1 = mock_campaigns_1_1;
             }],
         execute: function() {
-            NewsletterService = (function () {
-                function NewsletterService() {
-                }
-                NewsletterService.prototype.getNewsletters = function () {
+            let NewsletterService = class NewsletterService {
+                getNewsletters() {
                     return Promise.resolve(mock_campaigns_1.CAMPAIGNS);
-                };
-                NewsletterService.prototype.getNewslettersSlowly = function () {
-                    return new Promise(function (resolve) {
-                        return setTimeout(function () { return resolve(mock_campaigns_1.CAMPAIGNS); }, 2000);
-                    } // 2 seconds
+                }
+                getNewslettersSlowly() {
+                    return new Promise(resolve => setTimeout(() => resolve(mock_campaigns_1.CAMPAIGNS), 2000) // 2 seconds
                      // 2 seconds
                     );
-                };
-                NewsletterService.prototype.getNewsletter = function (id) {
-                    return Promise.resolve(mock_campaigns_1.CAMPAIGNS).then(function (newsletters) { return newsletters.filter(function (newsletter) { return newsletter.id === id; })[0]; });
-                };
-                NewsletterService = __decorate([
-                    core_1.Injectable(), 
-                    __metadata('design:paramtypes', [])
-                ], NewsletterService);
-                return NewsletterService;
-            }());
+                }
+                getNewsletter(id) {
+                    return Promise.resolve(mock_campaigns_1.CAMPAIGNS).then(newsletters => newsletters.filter(newsletter => newsletter.id === id)[0]);
+                }
+            };
+            NewsletterService = __decorate([
+                core_1.Injectable(), 
+                __metadata('design:paramtypes', [])
+            ], NewsletterService);
             exports_1("NewsletterService", NewsletterService);
         }
     }

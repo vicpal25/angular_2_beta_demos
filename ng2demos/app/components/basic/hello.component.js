@@ -18,30 +18,25 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                 core_1 = core_1_1;
             }],
         execute: function() {
-            Hello = (function () {
-                function Hello() {
+            let Hello = class Hello {
+                constructor() {
                     console.log(this);
                 }
                 ;
-                Object.defineProperty(Hello.prototype, "name", {
-                    set: function (name) {
-                        this._name = name;
-                    },
-                    enumerable: true,
-                    configurable: true
-                });
-                Hello = __decorate([
-                    core_1.Component({
-                        selector: 'hello',
-                        properties: ['name: name']
-                    }),
-                    core_1.View({
-                        template: "<h1>Hello {{_name}}</h1>"
-                    }), 
-                    __metadata('design:paramtypes', [])
-                ], Hello);
-                return Hello;
-            }());
+                set name(name) {
+                    this._name = name;
+                }
+            };
+            Hello = __decorate([
+                core_1.Component({
+                    selector: 'hello',
+                    properties: ['name: name']
+                }),
+                core_1.View({
+                    template: `<h1>Hello {{_name}}</h1>`
+                }), 
+                __metadata('design:paramtypes', [])
+            ], Hello);
             exports_1("Hello", Hello);
         }
     }

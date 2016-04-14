@@ -5,14 +5,13 @@ System.register([], function(exports_1, context_1) {
     return {
         setters:[],
         execute: function() {
-            Newsletter = (function () {
-                function Newsletter(name, source) {
+            class Newsletter {
+                constructor(name, source) {
                     this.name = name;
                     this.source = source;
                     this.descr = this.name + ' ' + this.source;
                 }
-                return Newsletter;
-            }());
+            }
             exports_1("Newsletter", Newsletter);
         }
     }

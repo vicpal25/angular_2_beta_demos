@@ -5,13 +5,12 @@ System.register([], function(exports_1, context_1) {
     return {
         setters:[],
         execute: function() {
-            Column = (function () {
-                function Column(name, descr) {
+            class Column {
+                constructor(name, descr) {
                     this.name = name;
                     this.descr = descr;
                 }
-                return Column;
-            }());
+            }
             exports_1("Column", Column);
         }
     }

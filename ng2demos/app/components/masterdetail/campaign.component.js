@@ -27,33 +27,31 @@ System.register(['angular2/core', 'angular2/router', './newsletter-detail.compon
                 newsletter_service_1 = newsletter_service_1_1;
             }],
         execute: function() {
-            CampaignComponent = (function () {
-                function CampaignComponent(_router, _newsletterService) {
+            let CampaignComponent = class CampaignComponent {
+                constructor(_router, _newsletterService) {
                     this._router = _router;
                     this._newsletterService = _newsletterService;
                 }
-                CampaignComponent.prototype.getNewsletters = function () {
-                    var _this = this;
-                    this._newsletterService.getNewsletters().then(function (newsletters) { return _this.newsletters = newsletters; });
-                };
-                CampaignComponent.prototype.ngOnInit = function () {
+                getNewsletters() {
+                    this._newsletterService.getNewsletters().then(newsletters => this.newsletters = newsletters);
+                }
+                ngOnInit() {
                     this.getNewsletters();
-                };
-                CampaignComponent.prototype.onSelect = function (newsletter) { this.selectedNewsletter = newsletter; };
-                CampaignComponent.prototype.gotoDetail = function () {
+                }
+                onSelect(newsletter) { this.selectedNewsletter = newsletter; }
+                gotoDetail() {
                     this._router.navigate(['NewslettersDetail', { id: this.selectedNewsletter.id }]);
-                };
-                CampaignComponent = __decorate([
-                    core_1.Component({
-                        selector: 'newsletters',
-                        templateUrl: './app/templates/campaign.component.html',
-                        styleUrls: ['./app/templates/campaign.component.css'],
-                        directives: [newsletter_detail_component_1.NewsletterDetailComponent]
-                    }), 
-                    __metadata('design:paramtypes', [router_1.Router, newsletter_service_1.NewsletterService])
-                ], CampaignComponent);
-                return CampaignComponent;
-            }());
+                }
+            };
+            CampaignComponent = __decorate([
+                core_1.Component({
+                    selector: 'newsletters',
+                    templateUrl: './app/templates/campaign.component.html',
+                    styleUrls: ['./app/templates/campaign.component.css'],
+                    directives: [newsletter_detail_component_1.NewsletterDetailComponent]
+                }), 
+                __metadata('design:paramtypes', [router_1.Router, newsletter_service_1.NewsletterService])
+            ], CampaignComponent);
             exports_1("CampaignComponent", CampaignComponent);
         }
     }

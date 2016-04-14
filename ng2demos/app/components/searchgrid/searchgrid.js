@@ -30,8 +30,8 @@ System.register(['angular2/core', './column', './sortable', './keysearch', './ne
                 newsletters_1 = newsletters_1_1;
             }],
         execute: function() {
-            SearchGrid = (function () {
-                function SearchGrid(newsletterService) {
+            let SearchGrid = class SearchGrid {
+                constructor(newsletterService) {
                     this.newsletterService = newsletterService;
                     this.sorter = new sortable_1.Sortable();
                     this.columns = [
@@ -41,21 +41,20 @@ System.register(['angular2/core', './column', './sortable', './keysearch', './ne
                     ];
                     this.rows = this.newsletterService.newsletters;
                 }
-                SearchGrid.prototype.sort = function (key) {
+                sort(key) {
                     this.sorter.sort(key, this.rows);
                     console.log(this.newsletterService.newsletters);
-                };
-                SearchGrid = __decorate([
-                    core_1.Component({
-                        selector: 'grid',
-                        properties: ['rows: rows', 'columns: columns'],
-                        templateUrl: './app/templates/searchgrid.component.html',
-                        directives: [keysearch_1.KeySearch]
-                    }), 
-                    __metadata('design:paramtypes', [newsletters_1.NewsletterService])
-                ], SearchGrid);
-                return SearchGrid;
-            }());
+                }
+            };
+            SearchGrid = __decorate([
+                core_1.Component({
+                    selector: 'grid',
+                    properties: ['rows: rows', 'columns: columns'],
+                    templateUrl: './app/templates/searchgrid.component.html',
+                    directives: [keysearch_1.KeySearch]
+                }), 
+                __metadata('design:paramtypes', [newsletters_1.NewsletterService])
+            ], SearchGrid);
             exports_1("SearchGrid", SearchGrid);
         }
     }

@@ -5,12 +5,11 @@ System.register([], function(exports_1, context_1) {
     return {
         setters:[],
         execute: function() {
-            Sortable = (function () {
-                function Sortable() {
+            class Sortable {
+                constructor() {
                     this.direction = 1;
                 }
-                Sortable.prototype.sort = function (key, data) {
-                    var _this = this;
+                sort(key, data) {
                     if (this.key === key) {
                         this.direction = -this.direction;
                     }
@@ -18,20 +17,19 @@ System.register([], function(exports_1, context_1) {
                         this.direction = 1;
                     }
                     this.key = key;
-                    data.sort(function (a, b) {
+                    data.sort((a, b) => {
                         if (a[key] === b[key]) {
                             return 0;
                         }
                         else if (a[key] > b[key]) {
-                            return _this.direction;
+                            return this.direction;
                         }
                         else {
-                            return -_this.direction;
+                            return -this.direction;
                         }
                     });
-                };
-                return Sortable;
-            }());
+                }
+            }
             exports_1("Sortable", Sortable);
         }
     }

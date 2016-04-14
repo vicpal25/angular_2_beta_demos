@@ -27,34 +27,32 @@ System.register(['angular2/core', 'angular2/router', './newsletter', './newslett
                 newsletter_service_1 = newsletter_service_1_1;
             }],
         execute: function() {
-            NewsletterDetailComponent = (function () {
-                function NewsletterDetailComponent(_newsletterService, _routeParams) {
+            let NewsletterDetailComponent = class NewsletterDetailComponent {
+                constructor(_newsletterService, _routeParams) {
                     this._newsletterService = _newsletterService;
                     this._routeParams = _routeParams;
                 }
-                NewsletterDetailComponent.prototype.ngOnInit = function () {
-                    var _this = this;
-                    var id = +this._routeParams.get('id');
+                ngOnInit() {
+                    let id = +this._routeParams.get('id');
                     this._newsletterService.getNewsletter(id)
-                        .then(function (newsletter) { return _this.newsletter = newsletter; });
-                };
-                NewsletterDetailComponent.prototype.goBack = function () {
+                        .then(newsletter => this.newsletter = newsletter);
+                }
+                goBack() {
                     window.history.back();
-                };
-                __decorate([
-                    core_1.Input(), 
-                    __metadata('design:type', newsletter_1.Newsletter)
-                ], NewsletterDetailComponent.prototype, "newsletter", void 0);
-                NewsletterDetailComponent = __decorate([
-                    core_1.Component({
-                        selector: 'my-hero-detail',
-                        templateUrl: './app/templates/newsletter-detail.component.html',
-                        styleUrls: ['./app/templates/hero-detail.component.css']
-                    }), 
-                    __metadata('design:paramtypes', [newsletter_service_1.NewsletterService, router_1.RouteParams])
-                ], NewsletterDetailComponent);
-                return NewsletterDetailComponent;
-            }());
+                }
+            };
+            __decorate([
+                core_1.Input(), 
+                __metadata('design:type', newsletter_1.Newsletter)
+            ], NewsletterDetailComponent.prototype, "newsletter", void 0);
+            NewsletterDetailComponent = __decorate([
+                core_1.Component({
+                    selector: 'my-hero-detail',
+                    templateUrl: './app/templates/newsletter-detail.component.html',
+                    styleUrls: ['./app/templates/hero-detail.component.css']
+                }), 
+                __metadata('design:paramtypes', [newsletter_service_1.NewsletterService, router_1.RouteParams])
+            ], NewsletterDetailComponent);
             exports_1("NewsletterDetailComponent", NewsletterDetailComponent);
         }
     }

@@ -21,27 +21,26 @@ System.register(['angular2/core', './newsletter.component'], function(exports_1,
                 newsletter_component_1 = newsletter_component_1_1;
             }],
         execute: function() {
-            Newsletters = (function () {
-                function Newsletters() {
+            let Newsletters = class Newsletters {
+                constructor() {
                     this.newsletters = [];
                 }
-                Newsletters.prototype.addNewsletter = function (name, source) {
-                    var newsletter = new newsletter_component_1.Newsletter(name, source);
+                addNewsletter(name, source) {
+                    const newsletter = new newsletter_component_1.Newsletter(name, source);
                     this.newsletters.push(newsletter);
-                };
-                Newsletters.prototype.removeNewsletter = function (newsletter) {
-                    var index = this.newsletters.indexOf(newsletter);
+                }
+                removeNewsletter(newsletter) {
+                    const index = this.newsletters.indexOf(newsletter);
                     this.newsletters.splice(index, 1);
-                };
-                Newsletters = __decorate([
-                    core_1.Component({
-                        selector: 'newsletter',
-                        templateUrl: './app/templates/newsletters.component.html'
-                    }), 
-                    __metadata('design:paramtypes', [])
-                ], Newsletters);
-                return Newsletters;
-            }());
+                }
+            };
+            Newsletters = __decorate([
+                core_1.Component({
+                    selector: 'newsletter',
+                    templateUrl: './app/templates/newsletters.component.html'
+                }), 
+                __metadata('design:paramtypes', [])
+            ], Newsletters);
             exports_1("Newsletters", Newsletters);
         }
     }

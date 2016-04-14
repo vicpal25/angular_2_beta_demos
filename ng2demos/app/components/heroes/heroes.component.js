@@ -27,33 +27,31 @@ System.register(['angular2/core', 'angular2/router', './hero-detail.component', 
                 hero_service_1 = hero_service_1_1;
             }],
         execute: function() {
-            HeroesComponent = (function () {
-                function HeroesComponent(_router, _heroService) {
+            let HeroesComponent = class HeroesComponent {
+                constructor(_router, _heroService) {
                     this._router = _router;
                     this._heroService = _heroService;
                 }
-                HeroesComponent.prototype.getHeroes = function () {
-                    var _this = this;
-                    this._heroService.getHeroes().then(function (heroes) { return _this.heroes = heroes; });
-                };
-                HeroesComponent.prototype.ngOnInit = function () {
+                getHeroes() {
+                    this._heroService.getHeroes().then(heroes => this.heroes = heroes);
+                }
+                ngOnInit() {
                     this.getHeroes();
-                };
-                HeroesComponent.prototype.onSelect = function (hero) { this.selectedHero = hero; };
-                HeroesComponent.prototype.gotoDetail = function () {
+                }
+                onSelect(hero) { this.selectedHero = hero; }
+                gotoDetail() {
                     this._router.navigate(['HeroDetail', { id: this.selectedHero.id }]);
-                };
-                HeroesComponent = __decorate([
-                    core_1.Component({
-                        selector: 'my-heroes',
-                        templateUrl: './app/templates/heroes.component.html',
-                        styleUrls: ['./app/templates/heroes.component.css'],
-                        directives: [hero_detail_component_1.HeroDetailComponent]
-                    }), 
-                    __metadata('design:paramtypes', [router_1.Router, hero_service_1.HeroService])
-                ], HeroesComponent);
-                return HeroesComponent;
-            }());
+                }
+            };
+            HeroesComponent = __decorate([
+                core_1.Component({
+                    selector: 'my-heroes',
+                    templateUrl: './app/templates/heroes.component.html',
+                    styleUrls: ['./app/templates/heroes.component.css'],
+                    directives: [hero_detail_component_1.HeroDetailComponent]
+                }), 
+                __metadata('design:paramtypes', [router_1.Router, hero_service_1.HeroService])
+            ], HeroesComponent);
             exports_1("HeroesComponent", HeroesComponent);
         }
     }
