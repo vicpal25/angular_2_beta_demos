@@ -30,8 +30,7 @@ System.register(['angular2/core', './car'], function(exports_1, context_1) {
             Tesla = __decorate([
                 core_1.Component({
                     selector: 'tesla',
-                    templateUrl: './app/templates/tesla.component.html',
-                    injectables: [car_1.Car]
+                    templateUrl: './app/templates/tesla.component.html'
                 }),
                 core_1.Injectable(), 
                 __metadata('design:paramtypes', [String, Boolean])

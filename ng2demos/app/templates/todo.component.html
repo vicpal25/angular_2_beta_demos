@@ -6,26 +6,22 @@
         <label for=" title" >Task: </label >
         <input name=" title" #newTask >
     </div>
-
+    <br/>
     <button (click)="addTask(newTask)" class=" ui positive right button" >
         Add
     </button>
 </form>
 
 <br>
-<div class="ui grid posts" >
 
-    <div class="ui middle aligned divided list one wide" style="width:100%">
-
-        <div *ngFor="#item of tasks | async" class="item">
-            <div class="right floated content">
-            <div class="ui button" (click)="removeTask( item.$key )" >Remove</div>
-            </div>
-            <div class="content">
+<table width="60%">
+        <tr *ngFor="#item of tasks | async" class="item" style="border-bottom:1px solid #ccc;">
+            <td>
               <p>  {{ item.$value }} </p>
-            </div>
-        </div>
+            </td>
+             <td style="text-align:right;">
+                 <button  (click)="removeTask( item.$key )"  style="background-color:#ddd; cursor:pointer; text-align:center;">Remove</button>
+            </td>
+        </tr>    
+</table>
 
-      </div>
-
-</div>

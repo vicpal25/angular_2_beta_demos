@@ -3,8 +3,7 @@ import {Car} from './car';
 
 @Component({
     selector: 'tesla',
-    templateUrl: './app/templates/tesla.component.html',
-    injectables: [Car]
+    templateUrl: './app/templates/tesla.component.html'
 })
 
 

@@ -11,16 +11,15 @@ import {Basic} from './components/basic/basic.component';
 import {Newsletters} from './components/newsletters/newsletters.component';
 
 //3)
-import {Tesla} from './components/es6features/tesla';
-
-// )
 import {Todo} from './components/todo/todo.component';
-
 
 //4)
 import { NewsletterService } from './components/masterdetail/newsletter.service';
 import { NewsletterDetailComponent } from './components/masterdetail/newsletter-detail.component';
 import { CampaignComponent } from './components/masterdetail/campaign.component';
+
+//3)
+// import {Tesla} from './components/es6features/tesla';
 
 
 // import {SearchGrid} from './components/searchgrid/searchgrid';
@@ -47,7 +46,7 @@ import {FIREBASE_PROVIDERS, defaultFirebase, AngularFire, FirebaseListObservable
   // { path: '/searchgrid', name: 'SearchGrid', component: SearchGrid },
   { path: '/newsletters/:id', name: 'NewslettersDetail', component: NewsletterDetailComponent },
   { path: '/campaign', name: 'Campaign', component: CampaignComponent },
-  { path: '/ts', name: 'Tesla', component: Tesla },
+  // { path: '/ts', name: 'Tesla', component: Tesla },
   { path: '/todo', component: Todo, name: 'Todo'},
 ])
 
