@@ -1,8 +1,8 @@
 import {Component} from 'angular2/core'
 
 @Component({
-    selector: 'home',
-    template: '<h1>Home pageeee</h1><br/><input #name (keyup)="0" /> {{name.value}}'
+    selector: 'home'
+    template: '<h1>Home!!</h1>'
 })
 
 export class Home {

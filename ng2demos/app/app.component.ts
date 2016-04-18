@@ -2,7 +2,6 @@ import {Component} from 'angular2/core';
 import {RouteConfig, ROUTER_PROVIDERS, ROUTER_DIRECTIVES} from 'angular2/router'
 
 //import {ROUTER_DIRECTIVES, ROUTER_PROVIDERS, RouteConfig} from 'angular2/router';
-
 import {Home} from './components/home/home.component'
 
 //1
@@ -12,7 +11,11 @@ import {Basic} from './components/basic/basic.component';
 import {Newsletters} from './components/newsletters/newsletters.component';
 
 //3)
-import {Athelete} from './components/tsfeatures/athlete.component';
+import {Tesla} from './components/es6features/tesla';
+
+// )
+import {Todo} from './components/todo/todo.component';
+
 
 //4)
 import { NewsletterService } from './components/masterdetail/newsletter.service';
@@ -26,6 +29,9 @@ import { CampaignComponent } from './components/masterdetail/campaign.component'
 // import { HeroDetailComponent } from './components/heroes/hero-detail.component';
 // import { HeroService } from './components/heroes/hero.service';
 //
+
+import {FIREBASE_PROVIDERS, defaultFirebase, AngularFire, FirebaseListObservable} from 'angularfire2';
+
 
 @Component({
   selector: 'my-app',
@@ -41,8 +47,8 @@ import { CampaignComponent } from './components/masterdetail/campaign.component'
   // { path: '/searchgrid', name: 'SearchGrid', component: SearchGrid },
   { path: '/newsletters/:id', name: 'NewslettersDetail', component: NewsletterDetailComponent },
   { path: '/campaign', name: 'Campaign', component: CampaignComponent },
-  { path: '/ts', name: 'Athelete', component: Athelete }
-
+  { path: '/ts', name: 'Tesla', component: Tesla },
+  { path: '/todo', component: Todo, name: 'Todo'},
 ])
 
 export class AppComponent {

@@ -26,7 +26,7 @@ System.register(['angular2/core'], function(exports_1, context_1) {
             Home = __decorate([
                 core_1.Component({
                     selector: 'home',
-                    template: '<h1>Home pageeee</h1><br/><input #name (keyup)="0" /> {{name.value}}'
+                    template: '<h1>Home!!</h1>'
                 }), 
                 __metadata('design:paramtypes', [])
             ], Home);

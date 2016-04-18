@@ -1,8 +1,7 @@
-import {Component, View} from 'angular2/core';
+import {Component} from 'angular2/core';
 import {Newsletter} from './newsletter.component';
 
 @Component({
-    selector: 'newsletter',
     templateUrl: './app/templates/newsletters.component.html'
 })
 
@@ -25,9 +24,3 @@ export class Newsletters {
   }
 
 }
-
-
-// interface iNewsletter {
-//     name: string;
-//     source: string;
-// }

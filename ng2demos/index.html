@@ -29,10 +29,18 @@
     <!-- 2. Configure SystemJS -->
     <script>
       System.config({
+        map: {
+          firebase: 'node_modules/firebase/lib/firebase-web.js',
+          angularfire2: 'node_modules/angularfire2'
+        },
         packages: {
           app: {
             format: 'register',
             defaultExtension: 'js'
+          },
+          angularfire2: {
+            defaultExtension: 'js',
+            main: 'angularfire2.js'
           }
         }
       });

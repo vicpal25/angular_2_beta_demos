@@ -1,4 +1,4 @@
-System.register(['angular2/core'], function(exports_1, context_1) {
+System.register(['angular2/core', './car'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,20 +10,30 @@ System.register(['angular2/core'], function(exports_1, context_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1;
+    var core_1, car_1;
     var Es6features;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
+            },
+            function (car_1_1) {
+                car_1 = car_1_1;
             }],
         execute: function() {
             let Es6features = class Es6features {
+                constructor() {
+                    this.car = new car_1.Car('v8');
+                    console.log(this.car);
+                }
+                startcar() {
+                    return this.car;
+                }
             };
             Es6features = __decorate([
                 core_1.Component({
                     selector: 'es6features',
-                    templateUrl: './app/templates/basic.component.html'
+                    templateUrl: './app/templates/car.component.html'
                 }), 
                 __metadata('design:paramtypes', [])
             ], Es6features);

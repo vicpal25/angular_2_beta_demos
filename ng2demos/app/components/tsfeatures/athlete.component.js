@@ -19,13 +19,11 @@ System.register(['angular2/core'], function(exports_1, context_1) {
             }],
         execute: function() {
             let Athlete = class Athlete {
-                constructor() {
-                    console.log("yo!");
-                }
             };
             Athlete = __decorate([
                 core_1.Component({
-                    template: '<h1>Home pageeee</h1><br/><input #name (keyup)="0" /> {{name.value}}'
+                    selector: 'my-hero-detail',
+                    template: 'yo',
                 }), 
                 __metadata('design:paramtypes', [])
             ], Athlete);

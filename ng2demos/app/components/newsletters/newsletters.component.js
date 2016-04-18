@@ -36,7 +36,6 @@ System.register(['angular2/core', './newsletter.component'], function(exports_1,
             };
             Newsletters = __decorate([
                 core_1.Component({
-                    selector: 'newsletter',
                     templateUrl: './app/templates/newsletters.component.html'
                 }), 
                 __metadata('design:paramtypes', [])
@@ -45,8 +44,4 @@ System.register(['angular2/core', './newsletter.component'], function(exports_1,
         }
     }
 });
-// interface iNewsletter {
-//     name: string;
-//     source: string;
-// }
 //# sourceMappingURL=newsletters.component.js.map

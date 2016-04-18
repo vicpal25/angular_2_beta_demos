@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', './components/home/home.component', './components/basic/basic.component', './components/newsletters/newsletters.component', './components/tsfeatures/athlete.component', './components/masterdetail/newsletter.service', './components/masterdetail/newsletter-detail.component', './components/masterdetail/campaign.component'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router', './components/home/home.component', './components/basic/basic.component', './components/newsletters/newsletters.component', './components/es6features/tesla', './components/todo/todo.component', './components/masterdetail/newsletter.service', './components/masterdetail/newsletter-detail.component', './components/masterdetail/campaign.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/router', './components/home/home.com
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, home_component_1, basic_component_1, newsletters_component_1, athlete_component_1, newsletter_service_1, newsletter_detail_component_1, campaign_component_1;
+    var core_1, router_1, home_component_1, basic_component_1, newsletters_component_1, tesla_1, todo_component_1, newsletter_service_1, newsletter_detail_component_1, campaign_component_1;
     var AppComponent;
     return {
         setters:[
@@ -29,8 +29,11 @@ System.register(['angular2/core', 'angular2/router', './components/home/home.com
             function (newsletters_component_1_1) {
                 newsletters_component_1 = newsletters_component_1_1;
             },
-            function (athlete_component_1_1) {
-                athlete_component_1 = athlete_component_1_1;
+            function (tesla_1_1) {
+                tesla_1 = tesla_1_1;
+            },
+            function (todo_component_1_1) {
+                todo_component_1 = todo_component_1_1;
             },
             function (newsletter_service_1_1) {
                 newsletter_service_1 = newsletter_service_1_1;
@@ -42,12 +45,6 @@ System.register(['angular2/core', 'angular2/router', './components/home/home.com
                 campaign_component_1 = campaign_component_1_1;
             }],
         execute: function() {
-            // import {SearchGrid} from './components/searchgrid/searchgrid';
-            // import { DashboardComponent } from './components/heroes/dashboard.component';
-            // import { HeroesComponent } from './components/heroes/heroes.component';
-            // import { HeroDetailComponent } from './components/heroes/hero-detail.component';
-            // import { HeroService } from './components/heroes/hero.service';
-            //
             let AppComponent = class AppComponent {
             };
             AppComponent = __decorate([
@@ -64,7 +61,8 @@ System.register(['angular2/core', 'angular2/router', './components/home/home.com
                     // { path: '/searchgrid', name: 'SearchGrid', component: SearchGrid },
                     { path: '/newsletters/:id', name: 'NewslettersDetail', component: newsletter_detail_component_1.NewsletterDetailComponent },
                     { path: '/campaign', name: 'Campaign', component: campaign_component_1.CampaignComponent },
-                    { path: '/ts', name: 'Athelete', component: athlete_component_1.Athelete }
+                    { path: '/ts', name: 'Tesla', component: tesla_1.Tesla },
+                    { path: '/todo', component: todo_component_1.Todo, name: 'Todo' },
                 ]), 
                 __metadata('design:paramtypes', [])
             ], AppComponent);

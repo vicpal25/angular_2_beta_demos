@@ -1,22 +1,26 @@
 import {Component, View} from 'angular2/core'
+import {Car} from './car';
 
 @Component({
     selector: 'es6features',
-    templateUrl: './app/templates/basic.component.html'
+    templateUrl: './app/templates/car.component.html'
 })
+
 
 export class Es6features {
 
+  car: string;
 
-  // function *foo() {
-  //     yield 1;
-  //     return 2;
-  // }
-  //
-  // var it = foo();
-  //
-  // console.log( it.next() ); // { value:1, done:false }
-  // console.log( it.next() ); // { value:2, done:true }
+  constructor() {
+    this.car = new Car('v8');
+    console.log(this.car);
+  }
+
+  startcar() {
+    return this.car;
+  }
+
+
 
 
 }

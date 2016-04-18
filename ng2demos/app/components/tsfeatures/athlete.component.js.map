@@ -1,1 +1,1 @@
-{"version":3,"file":"athlete.component.js","sourceRoot":"","sources":["athlete.component.ts"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;YAMA;gBAEE;oBACE,OAAO,CAAC,GAAG,CAAC,KAAK,CAAC,CAAC;gBACrB,CAAC;YAEH,CAAC;YAVD;gBAAC,gBAAS,CAAC;oBACP,QAAQ,EAAE,sEAAsE;iBACnF,CAAC;;uBAAA;YAEF,6BAMC,CAAA"}
+{"version":3,"file":"athlete.component.js","sourceRoot":"","sources":["athlete.component.ts"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;YAOA;YAEA,CAAC;YAPD;gBAAC,gBAAS,CAAC;oBACT,QAAQ,EAAE,gBAAgB;oBAC1B,QAAQ,EAAE,IAAI;iBACf,CAAC;;uBAAA;YAEF,6BAEC,CAAA"}
